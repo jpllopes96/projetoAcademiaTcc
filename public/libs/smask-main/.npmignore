@@ -1,0 +1,5 @@
+docs/
+.idea
+.gitignore
+webpack.config.js
+.editorconfig
