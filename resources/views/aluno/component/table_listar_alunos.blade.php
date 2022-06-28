@@ -8,8 +8,8 @@
 
 
 <div class="card bg-dark text-white" style="opacity: .98">
+    <div class="card-header">Lista Alunos</div>
     <div class="card-body">
-        <h4 class="card-title">Lista Alunos</h4>
         <div class="table-responsive mt-3">
 
             <table class="table table-dark table-striped table-hover">
@@ -33,8 +33,8 @@
                     @else
                         @foreach ($alunos as $aluno)
                             <tr>
-                                <td>{{ $aluno->user->name }}</td>
-                                <td>{{ $aluno->user->celular }}</td>
+                                <td style="min-width: 10ch;">{{ $aluno->user->name }}</td>
+                                <td style="min-width: 16ch;">{{ $aluno->user->celular }}</td>
                                 <td>{{ $aluno->user->email }}</td>
                                 <td class="text-truncate">
                                     <a href="{{ route('treino.create', $aluno->id) }}" class="btn btn-secondary"

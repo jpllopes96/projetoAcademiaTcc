@@ -29,7 +29,6 @@
                                             <thead>
                                                 <tr>
                                                     <th>Treino</th>
-                                                    <th></th>
                                                     <th>
                                                         <i class="fas fa-sort text-muted"></i>
                                                         <span class="d-none d-lg-inline-block"> Séries</span>
@@ -45,23 +44,25 @@
                                                         <span class="d-none d-lg-inline-block"> Carga</span>
                                                         <span class="d-lg-none">C</span>
                                                     </th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @if (isset($treinos['treinos'][$key]))
                                                     @foreach ($treinos['treinos'][$key] as $treino)
                                                         <tr>
-                                                            <td>{{ $treino->treino }} </td>
-                                                            <td>
-                                                                @if ($treino->video)
-                                                                    <iframe class="embed-responsive-item"
-                                                                        src="{{ $treino->video }}"
-                                                                        allowfullscreen></iframe>
-                                                                @endif
-                                                            </td>
+                                                            <td style="min-width: 10ch;">{{ $treino->treino }} </td>
                                                             <td>{{ $treino->series }}</td>
                                                             <td>{{ $treino->repeticoes }}</td>
                                                             <td>{{ $treino->carga }}</td>
+                                                            @if ($treino->video)
+                                                                <td>
+
+                                                                    <iframe class="embed-responsive-item"
+                                                                        src="{{ $treino->video }}"
+                                                                        allowfullscreen></iframe>
+                                                                </td>
+                                                            @endif
                                                         </tr>
                                                     @endforeach
                                                 @else

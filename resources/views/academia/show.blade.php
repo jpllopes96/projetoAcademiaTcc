@@ -9,8 +9,8 @@
                         <h1 class="card-title mb-3 fw-bold">{{ $academia->user->name }}</h1>
 
                         <div>
-                            <img src="{{ asset($academia->img_path) }}" width="300" alt="{{ $academia->nome }}"
-                                class="float-lg-start me-3 mb-3 rounded ">
+                            <img src="{{ asset($academia->img_path) }}" style="max-width: 150px;"
+                                alt="{{ $academia->nome }}" class="float-lg-start me-3 mb-3 rounded ">
                             <p class="fs-5">
                                 {{ $academia->descricao }}
                             </p>

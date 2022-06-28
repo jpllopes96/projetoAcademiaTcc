@@ -12,17 +12,17 @@
                 </div>
 
                 <div class="card bg-dark text-white" style="opacity: .98">
+                    <div class="card-header">Lista de academias </div>
                     <div class="card-body">
-                        <h4 class="card-title">Lista de academias</h4>
                         <div class="table-responsive mt-3">
-
                             <table class="table table-dark table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
                                         <th><i class="fas fa-sort text-muted"></i> Nome</th>
                                         <th><i class="fas fa-sort text-muted"></i> Email</th>
-                                        <th><i class="fas fa-sort text-muted"></i> Enderço</th>
+                                        <th class="d-none d-lg-table-cell"><i class="fas fa-sort text-muted"></i> Enderço
+                                        </th>
                                         <th><i class="fas fa-sort text-muted"></i> Opções</th>
                                     </tr>
                                 </thead>
@@ -42,7 +42,7 @@
                                                 <td>{{ $academia->id }}</td>
                                                 <td>{{ $academia->user->name }}</td>
                                                 <td>{{ $academia->user->email }}</td>
-                                                <td> {{ $academia->endereco }} </td>
+                                                <td class="d-none d-lg-table-cell"> {{ $academia->endereco }} </td>
                                                 <td class="text-truncate">
                                                     <a href="{{ route('academia.show', $academia->id) }}"
                                                         class="btn btn-secondary" title="Ver">

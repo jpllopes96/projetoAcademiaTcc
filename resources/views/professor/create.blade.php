@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <form action="{{ route('professor.store') }}" method="post">
                             @csrf
-                            <div class="row row-cols-3 g-3">
+                            <div class="row row-cols-2 g-3">
 
                                 <div>
                                     <label for="name" class="form-label">Nome</label>
@@ -34,7 +34,7 @@
                             </div>
 
                             <h5 class="mt-4">Dados para login</h5>
-                            <div class="row row-cols-3 g-3">
+                            <div class="row row-cols-1 row-cols-lg-3 g-3">
                                 <div>
                                     <label for="email" class="form-label">E-mail</label>
                                     <input type="text"

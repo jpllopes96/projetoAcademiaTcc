@@ -13,17 +13,18 @@
                     </div>
                 </div>
                 <div class="card bg-dark text-white" style="opacity: .98">
+                    <div class="card-header">Lista de Professores</div>
                     <div class="card-body">
-                        <h4 class="card-title">Lista de Professores</h4>
                         <div class="table-responsive mt-3">
 
                             <table class="table table-dark table-striped table-hover">
                                 <thead>
                                     <tr>
-
                                         <th><i class="fas fa-sort text-muted"></i> Nome</th>
-                                        <th><i class="fas fa-sort text-muted"></i> Celular</th>
-                                        <th><i class="fas fa-sort text-muted"></i> Email</th>
+                                        <th><i class="fas fa-sort text-muted"></i> Celular
+                                        </th>
+                                        <th><i class="fas fa-sort text-muted"></i> Email
+                                        </th>
                                         <th><i class="fas fa-sort text-muted"></i> Opções</th>
                                     </tr>
                                 </thead>
@@ -39,8 +40,8 @@
                                     @else
                                         @foreach ($professores as $professor)
                                             <tr>
-                                                <td>{{ $professor->user->name }}</td>
-                                                <td>{{ $professor->user->celular }}</td>
+                                                <td style="min-width: 10ch;">{{ $professor->user->name }}</td>
+                                                <td style="min-width: 16ch;">{{ $professor->user->celular }}</td>
                                                 <td>{{ $professor->user->email }}</td>
                                                 <td class="text-truncate">
                                                     <a href="{{ route('professor.show', $professor->id) }}"
