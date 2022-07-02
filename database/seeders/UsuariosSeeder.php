@@ -44,7 +44,7 @@ class UsuariosSeeder extends Seeder
         }
 
         // create usuários Alunos
-        $userAlunos = \App\Models\User::factory(20)->create();
+        $userAlunos = \App\Models\User::factory(60)->create();
         foreach ($userAlunos as $aluno) {
             $alunos = \App\Models\Aluno::factory(1)->create([
                 'user_id' => $aluno->id,

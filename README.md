@@ -1,109 +1,132 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Sistema para academias
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Níveis de acesso e funcionalidades
 
-## About Laravel
+### 1- Admin
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   Acesso inicial do sistema, o sistema é composto por apenas 1 admin que é considerado o dono do sistema e irá cadastrar outras academias, as academias representam os clientes do admin.
+-   CRUD de academias
+-   Após fazer o login vai exibir a lista de academis com opção para excluir ou editar, e um botão para cadastrar mais
+-   Alterar dados de login(E-mail/senha)
 
--   [Simple, fast routing engine](https://laravel.com/docs/routing).
--   [Powerful dependency injection container](https://laravel.com/docs/container).
--   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
--   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
--   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
--   [Robust background job processing](https://laravel.com/docs/queues).
--   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 2- Academia
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   Pode cadastrar professores, exercícios (supino, abdominal...), alunos e também os treinos referente a cada aluno (1 aluno pode ter o treino a,b,c... que são compostos por vários exercícios)
+-   Após fazer o logn irá mostrar uma lista de professores e alunos que pertencem a essa academia com opções de editar e excluir conta, editar treinos
+-   Adicionar, editar e alocar treinos a alunos
+-   Exportar os alunos para o excel
+-   Gráficos com informação da idade dos alunos, sexo(M/F), quantidade de professores e quantidade de alunos
+-   Campo para pesquisar aluno(a)
 
-## Learning Laravel
+### 3- Professor
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   Pode logar com usuário cadastrado pela academia, ele terá acesso as mesmas funcionalidade do usuário de nível academia, exceto cadastrar um novo professor
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 4- Aluno
 
-## Laravel Sponsors
+-   O aluno vai visualizar os treinar relacionados a ele
+-   Exportar o treino em PDF
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Frameworks Utilizados
 
-### Premium Partners
+-   Laravel 9.19.0
+-   Bootstrap 5.1.3
 
--   **[Vehikl](https://vehikl.com/)**
--   **[Tighten Co.](https://tighten.co)**
--   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
--   **[64 Robots](https://64robots.com)**
--   **[Cubet Techno Labs](https://cubettech.com)**
--   **[Cyber-Duck](https://cyber-duck.co.uk)**
--   **[Many](https://www.many.co.uk)**
--   **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
--   **[DevSquad](https://devsquad.com)**
--   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
--   **[OP.GG](https://op.gg)**
--   **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
--   **[Lendio](https://lendio.com)**
+## Pacotes Utilizados
 
-## Contributing
+**[Spatie](https://spatie.be/docs/laravel-permission/v5/installation-laravel)**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+composer require spatie/laravel-permission
+```
 
-## Code of Conduct
+**[Laravel pt-BR](https://github.com/lucascudo/laravel-pt-BR-localization)**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-# Instalando Laravel
-
-Referencia
-https://laravel.com/
-Comando
-composer create-project laravel/laravel projetoAcademia
-
-# Instalando UI e Bootstrap
-
-Referencia
-https://github.com/laravel/ui
-Comando
-composer require laravel/ui
-
-// Gerar Login/ Registrando scaffolding...
-
-Instalar dependencias
-npm install
-
-gerar os assets do front
-npm run dev
-Mix pediu para rodar o comando:
-npm install resolve-url-loader@^5.0.0 --save-dev --legacy-peer-deps
-depois executamos o run novamente
-npm run dev
-
-Pacote para traduzir pra PT-BR
-https://github.com/lucascudo/laravel-pt-BR-localization
+```
 composer require lucascudo/laravel-pt-br-localization --dev
+```
 
-Publicando as traduções
-php artisan vendor:publish --tag=laravel-pt-br-localization
+**[LaravelLegends pt-BR Validator](https://github.com/LaravelLegends/pt-br-validator)**
 
-Instalando pacote para alterar tabela users adicionando os providers
-composer require doctrine/dbal
+```
+composer require laravellegends/pt-br-validator
+```
 
-Instalar o pacote socialite
-https://laravel.com/docs/9.x/socialite
+**[Dom PDF](https://spatie.be/docs/laravel-permission/v5/installation-laravel)**
 
+```
+composer require barryvdh/laravel-dompdf
+```
+
+**[Laravel Excel](https://laravel-excel.com/)**
+
+```
+composer require maatwebsite/excel
+```
+
+**[Laravel Socialite](https://laravel.com/docs/8.x/socialite)**
+
+```
 composer require laravel/socialite
+```
 
-Spatie
-https://spatie.be/docs/laravel-permission/v5/installation-laravel
-https://www.youtube.com/watch?v=DRoHS8Rd6Po
+## Bibliotecas Utilizadas
+
+-   Smask (https://www.cssscript.com/input-mask-validation/)
+-   Izitoast (https://izitoast.marcelodolza.com/)
+-   Font Awesome (https://fontawesome.com/)
+-   Chart.js (https://www.chartjs.org/)
+
+## Instalação do Projeto
+
+### Baixar as depêndencias
+
+```
+composer install
+```
+
+### Copiar .env.example para .env e configure o banco de dados e as variáveis necessárias para login social
+
+```
+cp .env.example .env
+```
+
+### Gerar chave
+
+```
+php artisan key:generate
+```
+
+### Executando os migrations
+
+```
+php artisan migrate
+```
+
+### Seeders Obrigatórios
+
+Permissões de acesso
+
+```
+php artisan db:seed --class=PermissoesSeeder
+```
+
+Dias da semana
+
+```
+php artisan db:seed --class=DiasDaSemanaSeeder
+```
+
+### Seeders para testes
+
+Gerar usuários(É necessário ter cadastrado o admin antes de executar esse seeder, pois ele ira gerar academias, professores e alunos)
+
+```
+php artisan db:seed --class=UsersSeeder
+```
+
+### Iniciar servidor local
+
+```
+php artisan serve
+```
