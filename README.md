@@ -122,7 +122,7 @@ php artisan db:seed --class=DiasDaSemanaSeeder
 Gerar usuários(É necessário ter cadastrado o admin antes de executar esse seeder, pois ele ira gerar academias, professores e alunos)
 
 ```
-php artisan db:seed --class=UsersSeeder
+php artisan db:seed --class=UsuariosSeeder
 ```
 
 ### Iniciar servidor local
